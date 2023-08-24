@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default async function Courses({ courses }) {
+export default function Courses({ courses }) {
   return (
     <div className="courses">
       {courses &&
