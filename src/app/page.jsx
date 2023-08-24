@@ -1,7 +1,7 @@
 "use client";
 
 import Courses from "@/components/Courses";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import LoadingPage from "./loading";
 
 export default function Home() {
@@ -20,12 +20,12 @@ export default function Home() {
     fetchCourses();
   }, []);
 
-  if (loading) return <LoadingPage />;
-
   return (
     <>
-      <h1>Welcome to Next.js V13</h1>
-      <Courses courses={courses} />
+      <div style={{ margin: "0 1rem" }}>
+        <h1>Welcome to Next.js V13</h1>
+      </div>
+      {loading ? <LoadingPage /> : <Courses courses={courses} />}
     </>
   );
 }
